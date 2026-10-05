@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://how-to-lock-a-folder-on-iphone-in-ios-18.vercel.app/sitemap.xml
