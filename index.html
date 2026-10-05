@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 
-<html lang="en">
+
+
+
+
+ Repair build: UI-MEDIA-ALIGNMENT-V4-2026-10-05-QA-2026-10-05-V2 
+<!-- Repair build: UI-MEDIA-ALIGNMENT-V4-2026-10-05 --><html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>How to Lock a Folder on iPhone in iOS 18 | Complete Guide</title>
-<meta content="Learn what iOS 18 can and cannot lock on iPhone. Protect the Files app, lock individual Notes, secure hidden photos, understand the Hidden Apps folder, and choose a vault when you need a separate protected space." name="description"/>
-
+<meta content="Learn how iOS 18 protects files, Notes, photos and apps, plus when Folder Lock for iPhone provides a separate private vault for mixed files." name="description"/>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Archivo:wght@600;700&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <style>
 
@@ -29,7 +33,7 @@
     --font-body: 'Lato', sans-serif;
     --max-reading-width: 780px;
     --max-wide-width: 1160px;
-    --section-padding-v: 88px;
+    --section-padding-v: 72px;
     --radius-card: 22px;
     --shadow-card: 0 18px 45px rgba(26, 5, 51, 0.12);
     --shadow-hard: 12px 12px 0 rgba(255, 217, 61, 0.65);
@@ -125,8 +129,7 @@ li { margin-bottom: 0.65rem; }
 .container-wide { max-width: var(--max-wide-width); margin: 0 auto; padding: 0 24px; }
 .section-wrap {
     position: relative;
-    padding: var(--section-padding-v) 0 calc(var(--section-padding-v) + 26px);
-    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+    padding: var(--section-padding-v) 0;
 }
 .section-wrap:nth-of-type(odd) { background: #fff; }
 .bg-alt { background: #fff7df; }
@@ -147,15 +150,15 @@ li { margin-bottom: 0.65rem; }
     border: 2px solid var(--color-hero-bg);
     box-shadow: 5px 5px 0 var(--color-primary-accent);
     margin-bottom: 1.25rem;
-    opacity: 0;
-    transform: translateY(18px);
+    opacity: 1;
+    transform: none;
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .section-badge.visible { opacity: 1; transform: translateY(0); }
 
 .reveal-up {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: none;
     transition: opacity 0.75s ease, transform 0.75s ease;
 }
 .reveal-up.visible {
@@ -231,6 +234,31 @@ header {
     clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
 }
 
+
+/* Repair: styles for classes used by the final index markup */
+.brand-art { display:block; width:250px; height:56px; max-width:100%; }
+.text-glow { color: var(--color-secondary-accent); text-shadow: 0 2px 0 rgba(255,107,107,.35); }
+.hero-stat-grid { display:grid; grid-template-columns:repeat(4,minmax(110px,1fr)); gap:12px; margin:1.35rem 0 1.7rem; }
+.hero-stat { background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); padding:14px 12px; color:#fff; min-width:0; }
+.hero-stat strong { display:block; font-family:var(--font-subheading); color:var(--color-secondary-accent); font-size:1rem; margin-bottom:4px; }
+.hero-stat span { display:block; color:rgba(255,255,255,.78); font-size:.78rem; line-height:1.35; }
+.panel-bar { display:flex; gap:7px; margin-bottom:12px; }
+.panel-bar span { width:9px; height:9px; border-radius:50%; background:var(--color-secondary-accent); }
+.panel-bar span:nth-child(2) { background:var(--color-primary-accent); }
+.panel-bar span:nth-child(3) { background:var(--color-gradient-b-start); }
+.mini-terminal { margin-top:12px; padding:12px 14px; background:rgba(26,5,51,.92); color:#fff; font-size:.78rem; line-height:1.55; border:1px solid rgba(255,255,255,.16); }
+.mini-terminal span { color:var(--color-secondary-accent); }
+.steps-shell { position:relative; margin:1.5rem 0 2rem; }
+.step-connector { position:absolute; left:18px; top:10px; bottom:10px; width:36px; height:calc(100% - 20px); pointer-events:none; }
+.step-connector path { stroke:rgba(26,5,51,.22); stroke-width:2; fill:none; }
+.process-steps { list-style:none; padding:0; margin:0; counter-reset:step; }
+.process-steps li { position:relative; counter-increment:step; padding:0 0 22px 58px; }
+.process-steps li::before { content:counter(step); position:absolute; left:0; top:0; width:38px; height:38px; display:grid; place-items:center; background:var(--color-secondary-accent); border:2px solid var(--color-hero-bg); color:var(--color-hero-bg); font-family:var(--font-subheading); font-weight:700; z-index:1; }
+.image-shell { margin:2rem 0; padding:12px; background:#fff; border:2px solid var(--color-hero-bg); box-shadow:8px 8px 0 rgba(78,205,196,.35); }
+.inline-image { display:block; width:100%; max-height:430px; object-fit:contain; margin:0 auto; background:#fff; }
+@media (max-width:900px) { .hero-stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:520px) { .brand-art { width:205px; height:auto; } .hero-stat-grid { grid-template-columns:1fr 1fr; } }
+
 .hero {
     position: relative;
     overflow: hidden;
@@ -238,7 +266,7 @@ header {
         linear-gradient(135deg, rgba(78,205,196,0.13), transparent 33%),
         radial-gradient(circle at 70% 20%, rgba(255,107,107,0.22), transparent 34%),
         var(--color-hero-bg);
-    padding: 96px 0 90px;
+    padding: 72px 0 68px;
     color: #fff;
 }
 .hero::before,
@@ -509,8 +537,7 @@ select, input[type="text"] {
         radial-gradient(circle at 14% 14%, rgba(255,107,107,0.26), transparent 26%),
         radial-gradient(circle at 85% 12%, rgba(78,205,196,0.22), transparent 28%),
         var(--color-hero-bg);
-    padding: 98px 0 112px;
-    clip-path: polygon(0 0, 100% 4%, 100% 96%, 0 100%);
+    padding: 76px 0 82px;
 }
 .saas-band::before {
     content: "";
@@ -529,6 +556,7 @@ select, input[type="text"] {
 .saas-band h2 { margin-top: 0; }
 .saas-band h2::after { background: linear-gradient(90deg, var(--color-secondary-accent), var(--color-primary-accent)); }
 .saas-band p { color: rgba(255,255,255,0.82); }
+.saas-content { min-width: 0; }
 .saas-grid {
     display: grid;
     grid-template-columns: 1fr 0.92fr;
@@ -591,38 +619,6 @@ select, input[type="text"] {
     margin: 1rem 0;
     border: 1px solid rgba(255,255,255,0.16);
 }
-.protection-score {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0.3rem 0 1rem;
-    padding: 6px;
-}
-.score-ring { transform: rotate(-90deg); overflow: visible; }
-.score-track {
-    fill: transparent;
-    stroke: rgba(255,255,255,0.16);
-    stroke-width: 14;
-}
-.score-progress {
-    fill: transparent;
-    stroke: url(#scoreGradient);
-    stroke-width: 14;
-    stroke-linecap: round;
-    stroke-dasharray: 364;
-    stroke-dashoffset: 364;
-    transition: stroke-dashoffset 1.6s ease;
-}
-.protection-score.visible .score-progress { stroke-dashoffset: 55; }
-.score-value {
-    transform: rotate(90deg);
-    transform-origin: 80px 80px;
-    fill: #fff;
-    font-family: var(--font-heading);
-    font-size: 30px;
-    letter-spacing: -0.05em;
-}
-
 .masonry-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -930,12 +926,8 @@ footer {
 
 @media (max-width: 768px) {
     :root { --section-padding-v: 66px; }
-    .section-wrap {
-        clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
-    }
-    .hero {
-        padding: 76px 0 82px;
-    }
+    .section-wrap { padding: var(--section-padding-v) 0; }
+    .hero { padding: 58px 0 62px; }
     .hero::before {
         width: 245px;
         height: 245px;
@@ -972,9 +964,7 @@ footer {
         clip-path: none;
         box-shadow: 7px 7px 0 rgba(255,107,107,0.20);
     }
-    .saas-band {
-        clip-path: polygon(0 0, 100% 3%, 100% 97%, 0 100%);
-    }
+    .saas-band { padding: 62px 0 68px; }
     .saas-ctas { flex-direction: column; }
     .pricing-row {
         flex-direction: column;
@@ -993,8 +983,109 @@ footer {
     }
 }
 
+
+/* Screenshot QA V2: particle canvas must never take document-flow space */
+#hero-particles { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+/* Screenshot QA V2: mobile full-width + blank-space containment */
+html, body { width:100%; max-width:100%; }
+body { min-width:0; }
+header, section, footer { width:100%; max-width:100%; }
+.header-inner, .container-reading, .container-wide { width:100%; min-width:0; }
+.hero-grid, .saas-grid, .method-grid, .masonry-grid,
+.hero-copy, .hero-visual, .method-card, .method-card-inner,
+.method-face, .image-panel, .image-shell { min-width:0; max-width:100%; }
+.section-wrap, .hero, .saas-band { overflow:hidden; }
+@media (max-width:768px) {
+    #hero-particles { display:none; }
+    .header-inner, .container-reading, .container-wide { padding-left:18px; padding-right:18px; }
+    .hero-grid, .saas-grid, .method-grid, .masonry-grid { grid-template-columns:1fr !important; }
+    .hero-visual { min-height:0; margin-top:24px; }
+    .hero-device-frame { width:100%; max-width:340px; margin-inline:auto; }
+    .method-card, .method-card-inner, .method-face { min-height:0 !important; height:auto; }
+    .section-wrap { padding-top:54px; padding-bottom:54px; }
+}
+
+
+/* V4: stable official-media rendering + graceful fallback */
+.safe-media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 220px;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+  border: 1px solid rgba(125,170,220,.22);
+}
+.safe-media > .media-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+  color: inherit;
+  opacity: .76;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.safe-media > img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 460px;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+.safe-media figcaption { position: relative; z-index: 2; width: 100%; }
+
+.ios-folderlock-gallery{
+ display:grid;grid-template-columns:minmax(220px,.8fr) minmax(260px,1.2fr);
+ gap:1.4rem;align-items:stretch;margin-top:2rem
+}
+.ios-folderlock-boxshot,.ios-folderlock-screen{min-height:340px;border-radius:18px}
+.ios-folderlock-boxshot img{max-height:380px}
+.ios-folderlock-screen img{max-height:520px}
+@media(max-width:760px){.ios-folderlock-gallery{grid-template-columns:1fr}.ios-folderlock-boxshot,.ios-folderlock-screen{min-height:250px}}
+
 </style>
-<link href="https://how-to-lock-a-folder-on-iphone-in-ios-18.vercel.app/" rel="canonical"/><meta content="index,follow,max-image-preview:large" name="robots"/><meta content="WXLVDS835_xsjhNN-3E4a3MNGOOR3NROvw9o-5MD3kE" name="google-site-verification"/><meta content="article" property="og:type"/><meta content="How to Lock a Folder on iPhone in iOS 18" property="og:title"/><meta content="Learn what iOS 18 can and cannot lock on iPhone. Protect the Files app, lock individual Notes, secure hidden photos, understand the Hidden Apps folder, and choose a vault when you need a separate protected space." property="og:description"/><meta content="https://how-to-lock-a-folder-on-iphone-in-ios-18.vercel.app/" property="og:url"/><meta content="https://i.ibb.co/8LxjHwBP/vault-ios-mobile-and-tablet-mockup.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="How to Lock a Folder on iPhone in iOS 18" name="twitter:title"/><meta content="Learn what iOS 18 can and cannot lock on iPhone. Protect the Files app, lock individual Notes, secure hidden photos, understand the Hidden Apps folder, and choose a vault when you need a separate protected space." name="twitter:description"/></head>
+<link href="https://how-to-lock-a-folder-on-iphone-in-ios-18.vercel.app/" rel="canonical"/><meta content="index,follow,max-image-preview:large" name="robots"/><meta content="WXLVDS835_xsjhNN-3E4a3MNGOOR3NROvw9o-5MD3kE" name="google-site-verification"/><meta content="article" property="og:type"/><meta content="How to Lock a Folder on iPhone in iOS 18" property="og:title"/><meta content="Learn how iOS 18 protects files, Notes, photos and apps, plus when Folder Lock for iPhone provides a separate private vault for mixed files." property="og:description"/><meta content="https://how-to-lock-a-folder-on-iphone-in-ios-18.vercel.app/" property="og:url"/><meta content="https://www.newsoftwares.net/wp-content/uploads/2025/12/fl_ios_screenshot-1.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="How to Lock a Folder on iPhone in iOS 18" name="twitter:title"/><meta content="Learn how iOS 18 protects files, Notes, photos and apps, plus when Folder Lock for iPhone provides a separate private vault for mixed files." name="twitter:description"/><meta content="https://www.newsoftwares.net/wp-content/uploads/2025/12/fl_ios_screenshot-1.png" name="twitter:image"/><style>
+
+/* v3-folderlock-recommendation-2026-10-05 */
+.folderlock-recommendation{margin-top:2rem;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:2rem;align-items:stretch}
+.folderlock-copy,.folderlock-visual{min-width:0}
+.folderlock-product-card{height:100%;border:1px solid rgba(94,207,255,.28);background:linear-gradient(145deg,rgba(9,26,47,.98),rgba(7,18,33,.98));border-radius:22px;padding:26px;box-shadow:0 24px 60px rgba(0,0,0,.24)}
+.folderlock-product-card h3{margin:.35rem 0 .8rem;color:#fff;font-size:1.45rem;line-height:1.25}
+.folderlock-product-card p{color:#c8d7ea}
+.folderlock-kicker{display:inline-flex;padding:7px 11px;border-radius:999px;background:rgba(0,212,255,.11);border:1px solid rgba(0,212,255,.3);color:#7de7ff;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.folderlock-feature-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;margin:18px 0;padding:0;list-style:none}
+.folderlock-feature-list li{position:relative;padding-left:22px;color:#dce9f6;font-size:.94rem;line-height:1.5}
+.folderlock-feature-list li::before{content:'✓';position:absolute;left:0;top:0;color:#52d8ff;font-weight:900}
+.folderlock-pricing{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.folderlock-plan{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055);border-radius:15px;padding:15px}
+.folderlock-plan strong{display:block;color:#fff;font-size:1.05rem;margin-bottom:4px}
+.folderlock-price{display:block;color:#66e0ff;font-size:1.35rem;font-weight:900;margin:4px 0}
+.folderlock-plan small{display:block;color:#9fb4c9;line-height:1.45}
+.folderlock-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.folderlock-actions a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;border-radius:12px;padding:12px 16px;transition:.2s ease}
+.folderlock-actions .fl-primary{background:linear-gradient(135deg,#00d4ff,#5f6fff);color:#03111f}
+.folderlock-actions .fl-secondary{border:1px solid rgba(255,255,255,.2);color:#eaf6ff;background:rgba(255,255,255,.04)}
+.folderlock-price-note{margin-top:10px!important;font-size:.78rem!important;color:#8fa4bb!important}
+.folderlock-media-stack{display:grid;gap:14px;height:100%}
+.folderlock-boxshot-wrap,.folderlock-screen-wrap{border:1px solid rgba(255,255,255,.12);background:linear-gradient(145deg,#fff,#eef5fb);border-radius:20px;padding:18px;display:grid;place-items:center;overflow:hidden}
+.folderlock-boxshot-wrap img{display:block;width:auto;max-width:100%;height:auto;max-height:330px;object-fit:contain}
+.folderlock-screen-wrap img{display:block;width:100%;height:auto;max-height:360px;object-fit:contain;border-radius:12px}
+.folderlock-media-caption{margin:.45rem 0 0;text-align:center;color:#9eb3c7;font-size:.78rem;line-height:1.4}
+@media(max-width:860px){.folderlock-recommendation{grid-template-columns:1fr}.folderlock-feature-list,.folderlock-pricing{grid-template-columns:1fr 1fr}.folderlock-boxshot-wrap img{max-height:270px}}
+@media(max-width:520px){.folderlock-feature-list,.folderlock-pricing{grid-template-columns:1fr}.folderlock-product-card{padding:20px}.folderlock-actions a{width:100%}}
+
+#hero-particles{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;pointer-events:none}
+@media(max-width:768px){#hero-particles{display:none!important}}
+</style>
+</head>
 <body>
 <header id="site-header">
 <div class="header-inner">
@@ -1027,8 +1118,8 @@ footer {
 </div>
 </header>
 <section class="hero" id="answer"><canvas id="hero-particles"></canvas>
-<div class="container-wide hero-shell">
-<div class="hero-content">
+<div class="container-wide hero-grid">
+<div class="hero-copy">
 <div class="breadcrumb">Guides / iPhone Privacy / iOS 18</div>
 <h1>How to <span class="text-glow">Lock a Folder</span> on iPhone in iOS 18</h1>
 <p>iOS 18 gives iPhone users stronger privacy controls, including the ability to lock many apps with Face ID, Touch ID, or the device passcode. But Apple still does not provide a universal command that adds a separate password directly to one ordinary folder in the Files app. The best method depends on what the “folder” contains.</p>
@@ -1046,10 +1137,10 @@ footer {
 <p><strong>Can you lock a folder on iPhone in iOS 18?</strong> Not an individual Files folder with its own password. Instead, you can lock the app that contains the data, lock individual Notes, use the locked Hidden collection for photos and videos, or move mixed private files into a dedicated vault app that creates its own protected storage area.</p>
 </div>
 </div>
-<div class="hero-product-panel">
-<div class="product-panel-inner">
+<div class="hero-visual">
+<div class="hero-device-frame safe-media"><span class="media-fallback">Folder Lock for iPhone app screenshot</span>
 <div class="panel-bar"><span></span><span></span><span></span></div>
-<img alt="iPhone privacy vault interface for protected files" class="hero-product-image" decoding="async" loading="eager" src="https://i.ibb.co/8LxjHwBP/vault-ios-mobile-and-tablet-mockup.png"/>
+<img alt="Folder Lock for iPhone official app screenshot" class="hero-product-image" decoding="async" loading="eager" onerror="this.remove()" src="https://www.newsoftwares.net/wp-content/uploads/2025/12/fl_ios_screenshot-1.png"/>
 <div class="mini-terminal">&gt; iOS 18: <span>lock apps with Face ID / Touch ID / passcode</span><br/>&gt; folder rule: <span>no separate password on one ordinary Files folder</span></div>
 </div>
 </div>
@@ -1101,7 +1192,7 @@ footer {
 <span class="quick-answer-label">Important limitation</span>
 <p>Locking Files protects entry to the <strong>app on that iPhone</strong>. It does not assign a new password to one folder, and Apple notes that an app’s locked or hidden status does not sync through iCloud. If the same iCloud Drive files are available on another signed-in device, protect that device too.</p>
 </div>
-<p>For Apple’s current instructions, see <a href="https://support.apple.com/guide/iphone/lock-or-hide-or-an-app-iph00f208d05/ios" rel="noopener noreferrer" target="_blank">Lock or hide an app on iPhone</a>.</p>
+<p>For Apple’s current instructions, see <a href="https://support.apple.com/guide/iphone/lock-or-hide-an-app-iph00f208d05/ios" rel="noopener noreferrer" target="_blank">Lock or hide an app on iPhone</a>.</p>
 </div>
 </section>
 <section class="section-wrap" id="notes">
@@ -1115,7 +1206,6 @@ footer {
 <li>Tap <strong>Lock</strong>.</li>
 <li>Authenticate using the method configured for that Notes account.</li>
 </ol>
-<figure class="image-shell"><img alt="Apple Notes lock interface on iPhone for protecting private notes" class="inline-image" decoding="async" loading="lazy" src="https://i.ibb.co/S4vzVL5V/apple-notes-lock.jpg"/></figure>
 <h3>Can you lock an entire Notes folder?</h3>
 <p>No. Apple’s lock feature applies to individual supported notes, not to a Notes folder as a single locked container. Apple also documents important limits: some notes cannot be locked, including notes with certain attachment types, tags, or unsupported account configurations. Notes synced through some third-party services may not support locking.</p>
 <p>If you use a custom Notes password, record it safely. Apple states that resetting a forgotten custom Notes password does not unlock notes that were already protected with the old password.</p>
@@ -1133,7 +1223,6 @@ footer {
 <li>Authenticate to view the Hidden collection.</li>
 <li>For extra discretion, you can turn off <strong>Show Hidden Album</strong> in Photos settings.</li>
 </ul>
-<figure class="image-shell"><img alt="iPhone Hidden album protected by Face ID for private photos and videos" class="inline-image" decoding="async" loading="lazy" src="https://i.ibb.co/VWwRM3SS/iphone-hidden-album-private-photos.jpg"/></figure>
 <p>Hidden is designed specifically for media. It is not a replacement for a general-purpose protected folder containing PDFs, ZIP files, spreadsheets, or mixed documents.</p>
 <p>See Apple’s <a href="https://support.apple.com/guide/iphone/delete-or-hide-photos-and-videos-iphb4defbde9/ios" rel="noopener noreferrer" target="_blank">Photos privacy instructions</a>.</p>
 </div>
@@ -1147,26 +1236,31 @@ footer {
 <p>If your goal is simply to keep someone using your iPhone from opening a particular app, iOS 18’s app lock is often enough. If your goal is to create a separate protected container for selected documents, use a solution designed around a private vault instead.</p>
 </div>
 </section>
-<section class="saas-band" id="vault">
-<div class="container-wide saas-grid">
-<div class="saas-content">
-<span class="section-badge" style="background:rgba(255,255,255,0.16);color:#fff;">Method 4 · Separate vault</span>
-<h2>When a Dedicated Vault Makes More Sense</h2>
-<p>A third-party vault can be useful when you want one protected place for mixed file types, a separate in-app credential, or privacy controls that are not tied only to the Files, Notes, or Photos interfaces. This is different from locking the Files app itself.</p>
-<p>Before trusting any vault, check its current App Store privacy information, recovery policy, export options, backup behavior, and whether files remain accessible outside the vault. Do not assume that a marketing term such as “secure folder” automatically means end-to-end encrypted storage.</p>
-<p>One option in the supplied resource set is <a href="https://folder-lock.com/" rel="noopener noreferrer" target="_blank">Folder Lock</a>. Treat it as an optional third-party approach rather than a requirement; Apple’s built-in methods above are preferable when they already fit the data you need to protect.</p>
-<div class="saas-ctas">
-<a class="btn-outline" href="https://folder-lock.com/" rel="noopener noreferrer" target="_blank">Review Folder Lock →</a>
-<a class="btn-outline" href="https://newsoftwares.net/" rel="noopener noreferrer" target="_blank">Developer Site →</a>
+<section class="saas-band" id="vault"><div class="container-wide">
+<div class="folderlock-recommendation">
+<div class="folderlock-copy">
+<div class="folderlock-product-card">
+<span class="folderlock-kicker">Recommended private-vault option for iPhone &amp; iPad</span>
+<h2 style="margin-top:14px;">Recommended: Folder Lock for stronger iPhone and iPad file privacy</h2>
+<p>iOS 18 can restrict access to apps and Apple provides privacy controls for Notes and Photos, but it still does not add a separate password to an ordinary Files folder. <strong>Folder Lock for iPhone and iPad</strong> is useful when you want a dedicated private vault for mixed files, photos, videos, documents, notes and other sensitive information.</p>
+<ul class="folderlock-feature-list">
+<li>Hide and protect private photos and videos</li>
+<li>Lock documents, audio and other private files</li>
+<li>Secure notes, wallets and personal information</li>
+<li>Cloud backup and cross-device support options</li>
+</ul>
+<div class="folderlock-pricing">
+<div class="folderlock-plan"><strong>Free</strong><span class="folderlock-price">$0</span><small>Try Folder Lock on iPhone/iPad with free-plan limits.</small></div>
+<div class="folderlock-plan"><strong>Pro</strong><span class="folderlock-price">$39.95</span><small>NewSoftwares lists the Pro price at $39.95; iOS subscription/purchase is completed from within the app.</small></div>
+</div>
+<div class="folderlock-actions">
+<a class="fl-primary" href="https://www.newsoftwares.net/folderlock/iphone/" rel="noopener noreferrer" target="_blank">Folder Lock for iPhone &amp; iPad</a>
+<a class="fl-secondary" href="https://www.newsoftwares.net/folderlock/" rel="noopener noreferrer" target="_blank">Compare Folder Lock Plans</a>
+</div>
+<p class="folderlock-price-note">Use Apple's built-in protections when they already fit your need. A vault is most useful when you specifically need a separate protected workspace. Check current App Store/in-app pricing before subscribing.</p>
 </div>
 </div>
-<div class="saas-mockup">
-<h3 style="color:#fff;margin-bottom:12px;border:none;">Private Vault Concept</h3>
-<p style="font-size:.92rem;color:#8fa0c9;">A vault app stores selected items inside its own protected workspace instead of adding a password to an ordinary iOS Files folder.</p>
-<figure class="image-shell"><img alt="iPhone secure vault interface for protecting selected private files" class="inline-image" decoding="async" loading="lazy" src="https://i.ibb.co/HDTt1D1R/ns-vault-ios-1.png"/></figure>
-</div>
-</div>
-</section>
+</div><div class="ios-folderlock-gallery"><figure class="safe-media ios-folderlock-boxshot"><span class="media-fallback">Folder Lock 10 official product boxshot</span><img alt="Folder Lock 10 official product boxshot" decoding="async" loading="lazy" onerror="this.remove()" src="https://www.newsoftwares.net/wp-content/uploads/2025/12/fl-boxshot-HI-res-3.png"/><figcaption>Folder Lock product boxshot</figcaption></figure><figure class="safe-media ios-folderlock-screen"><span class="media-fallback">Folder Lock for iPhone official app screenshot</span><img alt="Folder Lock for iPhone official app screenshot" decoding="async" loading="lazy" onerror="this.remove()" src="https://www.newsoftwares.net/wp-content/uploads/2025/12/fl_ios_screenshot-1.png"/><figcaption>Folder Lock for iPhone / iPad interface</figcaption></figure></div></div></section>
 <section class="section-wrap bg-alt" id="comparison">
 <div class="container-reading">
 <span class="section-badge">Compare</span>
@@ -1231,7 +1325,8 @@ footer {
 <a href="#answer">Top</a>
 <a href="#comparison">Compare Methods</a>
 <a href="#faq">FAQ</a>
-<a href="https://newsoftwares.net/" rel="noopener noreferrer" target="_blank">NewSoftwares.net</a>
+<a href="https://www.newsoftwares.net/folderlock/" rel="noopener noreferrer" target="_blank">Folder Lock</a>
+<a href="https://www.newsoftwares.net/" rel="noopener noreferrer" target="_blank">NewSoftwares.net</a>
 </div>
 <p class="footer-disclosure">Independent educational guide. Third-party product links are included only as optional alternatives to Apple’s built-in privacy features. Verify current app privacy and recovery policies before storing sensitive data.</p>
 <p>© 2026 iPhone Folder Privacy Guide</p>
